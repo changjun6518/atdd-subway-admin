@@ -1,16 +1,15 @@
 ## 지하철 정보 관리
 
 ### to-do
-- CRUD
-- 기능 먼저 구현하고 되는지 확인!
+- html, css, js 노선관리
 
 ### 1단계 - 지하철 노선 / 인수 테스트
-- [ ] 노선 CRUD
-    - [ ] 노선 추가 POST : "/lines"
-    - [ ] 노선 목록 조회 GET : "/lines"
-    - [ ] 노선 조회 GET : "/lines/{id}"
-    - [ ] 노선 수정 PUT : "/lines/{id}"
-    - [ ] 노선 제거 DELETE : "/lines/{id}"
+- [x] 노선 CRUD
+    - [x] 노선 추가 POST : "/lines"
+    - [x] 노선 목록 조회 GET : "/lines"
+    - [x] 노선 조회 GET : "/lines/{id}"
+    - [x] 노선 수정 PUT : "/lines/{id}"
+    - [x] 노선 제거 DELETE : "/lines/{id}"
 
 ### 2단계 - 지하철 노선 페이지
 - [ ] 노선 목록 조회

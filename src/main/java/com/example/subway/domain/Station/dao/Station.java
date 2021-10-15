@@ -15,5 +15,4 @@ public class Station {
 
     private String name;
     private LocalDateTime createdAt;
-
 }
