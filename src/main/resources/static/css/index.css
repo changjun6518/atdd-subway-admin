@@ -24,4 +24,5 @@ a {
     background-color: #FFFF66;
     list-style-type: none;
     vertical-align: middle;
+    justify-content: center;
 }
