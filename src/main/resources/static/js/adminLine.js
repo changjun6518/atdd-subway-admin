@@ -1,35 +1,24 @@
-const $submitButton = document.querySelector("#add-line-button")
+const $lineAddButton = document.querySelector(".line-add-button")
 
 function AdminLine() {
-    this.addButtonHandler = () => {
+    const addButtonHandler = () => {
         window.location.href = "admin-line-form";
     };
 
-    const submitLine = async () => {
-        const $lineName = document.querySelector("#line-name");
-        const $startTime = document.querySelector("#start-time");
-        const $lastTime = document.querySelector("#last-time");
-        const $interval = document.querySelector("#interval");
+    const getLines = async () => {
+        const lines = await fetch("/api/lines", {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            }
+        }).then(data => data.json()).then(data => console.log(data));
+    }
 
-        const lineInfo = {
-            name: $lineName.value,
-            firstTime : $startTime.value,
-            lastTime : $lastTime.value,
-            intervalTime : $interval.value,
-        }
-
-       await fetch("api/lines",{
-            method : "POST",
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify(lineInfo)
-        })
-    };
 
     this.init = () => {
-        $submitButton.addEventListener("click", submitLine);
-    }
+        getLines();
+        $lineAddButton.addEventListener("click", addButtonHandler);
+    };
 }
 
 const adminLine = new AdminLine();

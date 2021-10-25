@@ -1,11 +1,45 @@
-body{
-    text-align: center;
+.containers {
+    font-family: "배달의민족 주아";
+    font-size: 1rem;
+    margin: 2rem auto;
+    width: 30rem;
+    height: 45rem;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
 }
+
 .main-title {
+    font-size: 2rem;
     font-weight: bold;
     color: black;
     margin: 10px auto 30px;
 }
+
+.line-add-button {
+    align-self: end;
+    background-color: #FFFF66;
+    width: 5rem;
+    height: 1.5rem;
+    text-align: center;
+}
+
+.start-last-time-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+
+}
+
+.start-last-time-item {
+    width: 5rem;
+    height: 1.5rem;
+}
+
 .add-button {
     display: flex;
 

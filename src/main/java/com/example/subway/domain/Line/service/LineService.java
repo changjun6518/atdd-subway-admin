@@ -20,6 +20,7 @@ public class LineService {
     }
 
     public void addLine(LineRequest lineRequest) {
+        System.out.println(lineRequest.getColor());
         Line newLine = lineRequest.createLine();
         lineRepository.save(newLine);
     }

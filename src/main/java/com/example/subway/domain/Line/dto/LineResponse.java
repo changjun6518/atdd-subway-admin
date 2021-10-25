@@ -2,10 +2,12 @@ package com.example.subway.domain.Line.dto;
 
 import com.example.subway.domain.Line.dao.Line;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalTime;
 
 @Builder
+@Getter
 public class LineResponse {
     private String name;
 
