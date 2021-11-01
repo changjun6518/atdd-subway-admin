@@ -11,7 +11,8 @@ function AdminLine() {
             headers: {
                 "content-type": "application/json"
             }
-        }).then(data => data.json()).then(data => console.log(data));
+        }).then(data => data.json())
+            .then(data => console.log(data));
     }
 
 

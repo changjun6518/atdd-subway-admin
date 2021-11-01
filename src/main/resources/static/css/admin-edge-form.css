@@ -1,0 +1,77 @@
+.containers {
+    font-family: "배달의민족 주아";
+    font-size: 1rem;
+    margin: 2rem auto;
+    width: 35rem;
+    height: 30rem;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    margin: 10px auto 30px;
+}
+
+input {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    width: 60%;
+    height: 2rem;
+    box-shadow: 2px 1px 1px 1px gray;
+}
+
+select {
+    border-radius: 0.5rem;
+    box-shadow: 2px 1px 1px 1px gray;
+    height: 2rem;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    display: block;
+}
+
+.station-list, .time-distance-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    text-align: start;
+}
+
+/*.station-list:nth-child(1) {*/
+/*    margin: 0 0.5rem 2rem;*/
+/*}*/
+
+.button-list {
+    display: flex;
+    flex-direction: row;
+    align-self: end;
+}
+
+#add-edge-button, #cancel-button {
+    margin-top: 4rem;
+    border-radius: 0.25rem;
+    width: 3.5rem;
+    height: 2.5rem;
+}
+
+#cancel-button {
+    color: gray;
+}
+
+#add-edge-button {
+    background-color: #FFD228;
+    margin-left: 1rem;
+}
+
