@@ -24,4 +24,9 @@ public class ViewController {
     public String getEdgeForm() {
         return "edge/admin-edge-form";
     }
+
+    @GetMapping("admin-station")
+    public String getStationPage() {
+        return "station/admin-station";}
+
 }
