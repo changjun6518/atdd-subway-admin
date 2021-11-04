@@ -1,5 +1,8 @@
 package com.example.subway.domain.LineStation.dto;
 
+import com.example.subway.domain.Line.dao.Line;
+import com.example.subway.domain.LineStation.dao.LineStation;
+import com.example.subway.domain.Station.dao.Station;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +16,18 @@ public class LineStationRequest {
 
     private String station;
 
-    private Integer distance;
+    private Long distance;
 
-    private Integer duration;
+    private Long duration;
+
+
+    public LineStation toEntity(Line line, Station station, Station prevStation) {
+        return LineStation.builder()
+                .line(line)
+                .station(station)
+                .prevStation(prevStation)
+                .distance(distance)
+                .duration(duration)
+                .build();
+    }
 }

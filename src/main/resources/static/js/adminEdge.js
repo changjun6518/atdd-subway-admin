@@ -14,6 +14,7 @@ function AdminEdge() {
                 return edges;
             });
 
+        console.log(edges);
         // TODO - 응답받은 json을 가지고 브라우저에 그린다.
     }
 

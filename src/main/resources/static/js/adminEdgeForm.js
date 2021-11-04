@@ -57,8 +57,31 @@ function AdminEdgeForm() {
         window.location.href = '/admin-edge';
     }
 
+    const getStations = async () => {
+        const $prevStation = document.querySelector('#prev-station');
+        const $targetStation = document.querySelector('#target-station');
+
+        await fetch(`/api/stations`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(res => res.json())
+            .then(stations => {
+                stations.map(station => {
+                    $prevStation.insertAdjacentHTML("beforeend", `
+                        <option value="${station.stationName}">${station.stationName}</option> 
+                    `);
+                    $targetStation.insertAdjacentHTML("beforeend", `
+                        <option value="${station.stationName}">${station.stationName}</option> 
+                    `);
+                })
+            });
+    }
+
     this.init = () => {
         getLines();
+        getStations();
         $addEdgeButton.addEventListener("click", submitEdge);
         $cancelButton.addEventListener("click", cancelHandler);
     }

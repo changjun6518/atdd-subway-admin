@@ -2,6 +2,8 @@ package com.example.subway.domain.Line.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LineRepository extends JpaRepository<Line, Long> {
+import java.util.Optional;
 
+public interface LineRepository extends JpaRepository<Line, Long> {
+    Optional<Line> findByName(String name);
 }

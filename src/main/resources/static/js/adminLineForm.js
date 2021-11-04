@@ -1,7 +1,6 @@
 import {subwayLineColorOptions} from "../utils/subwayDefaultColor.js";
 import {makeColorLine} from "../utils/templateColor.js";
 
-
 const $submitButton = document.querySelector("#add-line-button")
 const $colorList = document.querySelector(".color-list")
 const $colorBox = document.querySelector("#color-box")
@@ -28,11 +27,15 @@ function AdminLineForm() {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify(lineInfo)
-        })
+        }).then(res => {
+           if (res.status === 200) {
+               alert('성공적으로 추가되었습니다.');
+           }
+       })
+
     };
 
     const showColor = () => {
-
         const colorTemplate = subwayLineColorOptions.map(
             (option) => {
                 $colorList.insertAdjacentHTML("beforeend",makeColorLine(option));
