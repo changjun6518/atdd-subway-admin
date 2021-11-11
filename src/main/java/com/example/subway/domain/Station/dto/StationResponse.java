@@ -3,6 +3,7 @@ package com.example.subway.domain.Station.dto;
 import com.example.subway.domain.Station.dao.Station;
 
 public class StationResponse {
+
     private Long stationId;
     private String stationName;
 

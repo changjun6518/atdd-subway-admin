@@ -11,15 +11,10 @@ import lombok.Setter;
 public class LineStationRequest {
 
     private String lineName;
-
     private String prevStation;
-
     private String station;
-
     private Long distance;
-
     private Long duration;
-
 
     public LineStation toEntity(Line line, Station station, Station prevStation) {
         return LineStation.builder()

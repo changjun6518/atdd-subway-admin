@@ -19,22 +19,30 @@
             <a class="nav-link" href="/admin-line">노선관리</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/admin-edge">구간관리</a>
+            <a class="nav-link" href="/admin-edge#0">구간관리</a>
         </li>
     </ul>
 
     <div class="containers">
-        <div class="main-title">구간 관리</div>
 
-        <button class="edge-add-button">구간 추가</button>
+        <div class="head">
+            <div class="main-title">구간 관리</div>
+            <button class="edge-add-button">구간 추가</button>
+        </div>
 
-        <div class="line">2호선</div>
-        <!--      삭제 예정 (js로 처리)   -->
-        <ul>
-            <li><div class="line-item"><span>강남역</span><button class="station-delete-button">삭제</button></div></li>
-            <li><div class="line-item"><span>신사역</span><button class="station-delete-button">삭제</button></div></li>
+        <div class="insert-line">
+
+        </div>
+
+        <ul class="line-list">
+
         </ul>
-        <!--       여기까지             -->
+
+        <div class="page-move-button">
+            <button id="prev-line">←</button>
+            <button id="next-line">→</button>
+        </div>
+
     </div>
 </body>
 </html>

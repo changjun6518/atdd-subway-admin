@@ -28,7 +28,7 @@ class LineServiceTest {
 
     @BeforeEach
     void setup() {
-        lineService = new LineService(lineRepository);
+//        lineService = new LineService(lineRepository);
         lineRequest = new LineRequest("1호선", LocalTime.now(), LocalTime.now(), "red", 5L);
     }
 

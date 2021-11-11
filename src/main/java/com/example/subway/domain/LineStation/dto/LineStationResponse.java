@@ -6,15 +6,20 @@ import lombok.Getter;
 @Getter
 public class LineStationResponse {
 
-    private String station;
-    private String line;
+    private final Long edgeId;
+    private final String station;
+    private final String line;
+    private final String lineColor;
 
-    public LineStationResponse(String station, String line) {
+    public LineStationResponse(Long edgeId, String station, String line, String lineColor) {
+        this.edgeId = edgeId;
         this.station = station;
         this.line = line;
+        this.lineColor = lineColor;
     }
 
     public static LineStationResponse of(LineStation lineStation) {
-        return new LineStationResponse(lineStation.getStation().getName(), lineStation.getLine().getName());
+        return new LineStationResponse(lineStation.getId(), lineStation.getStation().getName(),
+                lineStation.getLine().getName(), lineStation.getLine().getColor());
     }
 }
