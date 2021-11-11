@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class StationRequest {
+
     private String stationName;
 
     public StationRequest(String stationName) {

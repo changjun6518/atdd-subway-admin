@@ -9,18 +9,17 @@ import java.time.LocalTime;
 @Builder
 @Getter
 public class LineResponse {
+
+    private Long lineId;
     private String name;
-
     private LocalTime firstTime;
-
     private LocalTime lastTime;
-
     private String color;
-
     private Long intervalTime;
 
     public static LineResponse of(Line line) {
         return LineResponse.builder()
+                .lineId(line.getId())
                 .name(line.getName())
                 .color(line.getColor())
                 .firstTime(line.getFirstTime())

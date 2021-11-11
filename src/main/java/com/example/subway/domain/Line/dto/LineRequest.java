@@ -7,13 +7,9 @@ import java.time.LocalTime;
 public class LineRequest {
 
     private String name;
-
     private LocalTime firstTime;
-
     private LocalTime lastTime;
-
     private String color;
-
     private Long intervalTime;
 
     public LineRequest(String name, LocalTime firstTime, LocalTime lastTime, String color, Long intervalTime) {

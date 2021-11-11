@@ -33,7 +33,7 @@ function AdminEdgeForm() {
             body: JSON.stringify(request)
         })
 
-        window.location.href = '/admin-edge';
+        window.location.href = '/admin-edge#0';
     }
 
     const createSubmitRequest = () => {
@@ -54,11 +54,38 @@ function AdminEdgeForm() {
 
     const cancelHandler = (event) => {
         event.preventDefault();
-        window.location.href = '/admin-edge';
+        window.location.href = '/admin-edge#0';
+    }
+
+    const getStations = async () => {
+        const $prevStation = document.querySelector('#prev-station');
+        const $targetStation = document.querySelector('#target-station');
+
+        $prevStation.insertAdjacentHTML("beforeend", `
+                        <option value="출발역">출발역</option> 
+        `)
+
+        await fetch(`/api/stations`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(res => res.json())
+            .then(stations => {
+                stations.map(station => {
+                    $prevStation.insertAdjacentHTML("beforeend", `
+                        <option value="${station.stationName}">${station.stationName}</option> 
+                    `);
+                    $targetStation.insertAdjacentHTML("beforeend", `
+                        <option value="${station.stationName}">${station.stationName}</option> 
+                    `);
+                })
+            });
     }
 
     this.init = () => {
         getLines();
+        getStations();
         $addEdgeButton.addEventListener("click", submitEdge);
         $cancelButton.addEventListener("click", cancelHandler);
     }

@@ -4,6 +4,7 @@ import com.example.subway.domain.Line.dao.Line;
 import com.example.subway.domain.Line.dao.LineRepository;
 import com.example.subway.domain.Line.dto.LineRequest;
 import com.example.subway.domain.Line.dto.LineResponse;
+import com.example.subway.domain.LineStation.dao.LineStationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +15,11 @@ import java.util.stream.Collectors;
 public class LineService {
 
     private final LineRepository lineRepository;
+    private final LineStationRepository lineStationRepository;
 
-    public LineService(LineRepository lineRepository) {
+    public LineService(LineRepository lineRepository, LineStationRepository lineStationRepository) {
         this.lineRepository = lineRepository;
+        this.lineStationRepository = lineStationRepository;
     }
 
     public void addLine(LineRequest lineRequest) {
@@ -48,7 +51,10 @@ public class LineService {
         return LineResponse.of(line);
     }
 
-    public void deleteLine(Long id) {
-        lineRepository.deleteById(id);
+    @Transactional
+    public void deleteLine(Long lineId) {
+        lineStationRepository.findAllByLineId(lineId)
+                        .forEach(line -> line.setLine(null));
+        lineRepository.deleteById(lineId);
     }
 }

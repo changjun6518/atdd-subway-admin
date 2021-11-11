@@ -4,11 +4,12 @@
     margin: 2rem auto;
     width: 35rem;
     height: 30rem;
-    border: 5px solid black;
+    border: 2px solid gray;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem 2rem;
+    border-radius: 1rem;
 }
 
 .main-title {
@@ -26,11 +27,18 @@ input {
     box-shadow: 2px 1px 1px 1px gray;
 }
 
-select {
+#line {
     border-radius: 0.5rem;
     box-shadow: 2px 1px 1px 1px gray;
     height: 2rem;
     width: 100%;
+}
+
+#prev-station, #target-station {
+    border-radius: 0.5rem;
+    box-shadow: 2px 1px 1px 1px gray;
+    height: 2rem;
+    width: 10rem;
 }
 
 ul {
@@ -45,13 +53,10 @@ label {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 0;
     text-align: start;
 }
-
-/*.station-list:nth-child(1) {*/
-/*    margin: 0 0.5rem 2rem;*/
-/*}*/
 
 .button-list {
     display: flex;
